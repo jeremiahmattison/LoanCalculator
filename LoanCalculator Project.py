@@ -19,7 +19,24 @@ def calculate_loan(principal, annual_interest_rate, years):
     return total_payment, total_interest, monthly_payment
 
 # define the main function to interact with the user
-# next: setup above variables to ask for user for input 
-# get user input for loan details
+def main(): 
+    print("Welcome to the Loan Calculator!")
+# next: setup to ask for user for input 
+principal = float(input("Enter the loan amount: $"))
+annual_interest_rate = float(input("Enter the annual interest rate: "))
+years = int (input("Enter the number of years for the loan: "))
 
-# call the the loan calculator function
+monthly_payment, total_payment, total_interest = calculate_loan(principal, annual_interest_rate, years)
+
+# display results
+print("\nLoan Details:")
+print(f"Princial Amount: ${principal}")
+print(f"Annual Interest Rate: {annual_interest_rate}%")
+print(f"Number of Years: {years}")
+print("\nMonthly Payment:", round(monthly_payment, 2))
+print("Total Payment:", round(total_payment, 2))
+print("Total Interest:", round(total_interest, 2))
+
+# Entry point of program
+if __name__ == "__main__":
+    main()
